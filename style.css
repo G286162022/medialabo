@@ -13,3 +13,7 @@ div.box {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+ul {
+    background-color: rgb(252, 198, 133);
+}
