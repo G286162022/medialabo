@@ -1,0 +1,12 @@
+h1 {
+    color: navy;
+}
+
+div.zentai {
+    display: flex;
+    flex-direction: column;
+}
+
+div.box {
+    color:antiquewhite;
+}
