@@ -1,5 +1,6 @@
 h1 {
     color: navy;
+    background-color: orange;
 }
 
 div.zentai {
@@ -9,4 +10,6 @@ div.zentai {
 
 div.box {
     background-color:antiquewhite;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
