@@ -8,8 +8,11 @@ body {
 
 li.midasi {
     font-size: 40px;
+    background-color: rgb(0, 204, 255);
 }
 
 li.data {
     font-size: 20px;
+    background-color: aqua;
+    margin: 5px;
 }
