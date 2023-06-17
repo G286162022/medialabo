@@ -5,3 +5,7 @@ html {
 body {
     background: linear-gradient(rgb(110, 213, 247), white);
 }
+
+li {
+    font-size: 40px;
+}
