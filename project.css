@@ -6,6 +6,10 @@ body {
     background: linear-gradient(rgb(110, 213, 247), white);
 }
 
-li {
+li.midasi {
     font-size: 40px;
+}
+
+li.data {
+    font-size: 20px;
 }
