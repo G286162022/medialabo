@@ -18,7 +18,7 @@ function hantei() {
         console.log("答えは " + kotae + " でした。すでにゲームは終わっています");
     }else if(kotae===yoso) {
         console.log("正解です。おめでとう！");
-        stop = 1;
+        stop = stop + 1;
     }else if(kotae>yoso) {
         console.log("まちがい、答えはもっと大きいですよ");
     }else if(kotae<yoso) {
