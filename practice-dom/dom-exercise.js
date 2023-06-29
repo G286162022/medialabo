@@ -12,7 +12,11 @@ let data = [
 	{name:'沖縄', lat:26.2125, lng:127.68111}
 ];
 //// 注意: 以上は編集しないこと!
-
+let h2 = document.querySelector('h2#ex42'); 
+let p = document.createElement('p'); 
+p.textContent = '写真表と都市の緯度経度のページです';
+p.style.textEmphasis='sesame green'; 
+h2.insertAdjacentElement('afterend', p); 
 // 練習4-2 メッセージ追加プログラム
 
 
