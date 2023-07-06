@@ -30,7 +30,7 @@ function hantei() {
         console.log("まちがい、答えはもっと大きいですよ");
         result.textContent = 'まちがい、答えはもっと大きいですよ';
     }else if(kotae<yoso) {
-        console.log("まちがい、答えはもっと大きいですよ");
-        result.textContent = 'まちがい、答えはもっと大きいですよ';
+        console.log("まちがい、答えはもっと小さいですよ");
+        result.textContent = 'まちがい、答えはもっと小さいですよ';
     }
 }
