@@ -46,6 +46,13 @@ let data = {
 };
 
 ////////// 課題3-2 ここからプログラムを書こう
+let a = document.querySelector('#print');
+a.addEventListener('click', result);
+
+function result() {
+  let search = document.querySelector('input[name="country"]');
+  console.log('入力された国名: ' + search.value);
+}
 
 console.log("緯度: " + data.coord.lon);
 console.log("経度: " + data.coord.lat);
@@ -62,7 +69,7 @@ let zentai = document.querySelector('ul#zentai1');
 
 let midasi = document.querySelector('li#midasi1');
 midasi.textContent = '世界の天気（検索結果1件）';
-midasi.style.fontSize = '40px';
+midasi.style.fontSize = '20px';
 midasi.style.backgroundColor = 'rgb(0, 204, 255)';
 
 let naiyou = document.querySelector('ul#naiyou1');
