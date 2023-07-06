@@ -4,12 +4,14 @@ console.log('答え(デバッグ用): ' + kotae);
 let kaisu = 0;
 let stop = 0;
 
-hantei();
+let a = document.querySelector('#print');
+a.addEventListener('click', hantei);
 
 
 function hantei() {
     kaisu = kaisu + 1;
-    let yoso = 4;
+    let i = document.querySelector('input[name="number"]');
+    let yoso = i.value;
     let kaisu1 = document.querySelector('span#kaisu');
     let yoso1 = document.querySelector('span#answer');
     kaisu1.textContent = kaisu;
@@ -20,7 +22,7 @@ function hantei() {
     if(stop===1 || kaisu>3){
         console.log("答えは " + kotae + " でした。すでにゲームは終わっています");
         result.textContent = '答えは ' + kotae + ' でした。すでにゲームは終わっています';
-    }else if(kotae===yoso) {
+    }else if(kotae==yoso) {
         console.log("正解です。おめでとう！");
         result.textContent = '正解です。おめでとう！';
         stop = stop + 1;
