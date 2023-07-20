@@ -96,40 +96,9 @@ let a = document.querySelector('#print');
 a.addEventListener('click', result);
 let search = document.querySelector('select[id="country"]');
 
+
 function result() {
-  console.log('選択された国名: ' + search.value);
-}
-
-let b = document.querySelector('#print');
-b.addEventListener('click', sendRequest);
-
-function sendRequest() {
-  let url;
-  if(search.value==='カイロ') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/360630.json';
-  } else if(search.value==='モスクワ') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/524901.json';
-  } else if(search.value==='ヨハネスブルク') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/993800.json';
-  } else if(search.value==='北京市') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/1816670.json';
-  } else if (search.value==='東京') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/1850147.json';
-  } else if(search.value==='シンガポール') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/1880252.json';
-  } else if(search.value==='シドニー') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/2147714.json';
-  } else if(search.value==='ロンドン') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/2643743.json';
-  } else if(search.value==='パリ') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/2968815.json';
-  } else if(search.value==='リオデジャネイロ') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/3451189.json';
-  } else if(search.value==='ニューヨーク') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/5128581.json';
-  } else if(search.value==='ロサンゼルス') {
-    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/5368361.json';
-  }
+  let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/' + search.value + '.json';
 
   axios.get(url).then(showResult).catch(showError).then(finish);
 }
@@ -140,6 +109,7 @@ function showResult(resp) {
   if(typeof data === 'string') {
     data = JSON.parse(data);
   }
+  console.log('選択された国名: ' + data.name);
   console.log(data);
 
   console.log("天気: " + data.weather[0].description);
@@ -153,7 +123,7 @@ function showResult(resp) {
   console.log("都市名: " + data.name);
 
   let search = document.querySelector('select[id="country"]');
-  midasi.textContent = '◎' + search.value + 'の天気: ' + data.weather[0].description;
+  midasi.textContent = '◎' + data.name + 'の天気: ' + data.weather[0].description;
 
   let li1 = document.querySelector('li#li1');
   li1.textContent = '緯度:  ' + data.coord.lon;
