@@ -4,6 +4,9 @@ body {
     background: linear-gradient(to bottom, rgb(110, 213, 247), white);
 }
 
+h1 {
+    font-size: 40px;
+}
 ul {
     list-style: none;
     padding-left: 0;

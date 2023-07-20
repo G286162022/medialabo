@@ -46,99 +46,144 @@ let data = {
 };
 
 ////////// 課題3-2 ここからプログラムを書こう
-let a = document.querySelector('#print');
-a.addEventListener('click', result);
-
-function result() {
-  let search = document.querySelector('input[name="country"]');
-  console.log('入力された国名: ' + search.value);
-}
-
-console.log("緯度: " + data.coord.lon);
-console.log("経度: " + data.coord.lat);
-console.log("最低気温: " + data.main.temp_min);
-console.log("最高気温: " + data.main.temp_max);
-console.log("風向: " + data.wind.deg);
-console.log("風速: " + data.wind.speed);
-console.log("湿度: " + data.main.humidity);
-console.log("都市名: " + data.name);
-
-let div = document.querySelector('div#result');
-
-let zentai = document.querySelector('ul#zentai1');
-
 let midasi = document.querySelector('li#midasi1');
-midasi.textContent = '世界の天気（検索結果1件）';
-midasi.style.fontSize = '20px';
+midasi.textContent = '◎世界の天気';
+midasi.style.fontSize = '30px';
 midasi.style.backgroundColor = 'rgb(0, 204, 255)';
 
 let naiyou = document.querySelector('ul#naiyou1');
-naiyou.style.display = 'grid';
-naiyou.style.gridTemplateColumns = '1fr 1fr';
-naiyou.style.gridAutoRows = '100px';
-naiyou.style.gridGap = '5px';
+naiyou.style.display = 'inline-grid';
+naiyou.style.gridTemplateColumns = '200px 200px';
+naiyou.style.gridGap = '3px';
+naiyou.style.borderStyle = 'ridge';
+naiyou.style.borderColor = 'skyblue';
+naiyou.style.borderWidth = '10px';
 
-let data1 = document.querySelector('li#data1');
-let li1 = document.createElement('li');
-li1.textContent = '緯度:  ' + data.coord.lon;
+
 li1.style.fontSize = '20px';
 li1.style.backgroundColor = 'aqua';
 li1.style.margin = '5px';
-li1.style.marginRight = '40%';
-data1.insertAdjacentElement('beforeend', li1);
 
-let li2 = document.createElement('li');
-li2.textContent = "経度: " + data.coord.lat;
 li2.style.fontSize = '20px';
 li2.style.backgroundColor = 'aqua';
 li2.style.margin = '5px';
-li2.style.marginRight = '40%';
-data1.insertAdjacentElement('beforeend', li2);
 
-let li3 = document.createElement('li');
-li3.textContent = "最低気温: " + data.main.temp_min;
 li3.style.fontSize = '20px';
 li3.style.backgroundColor = 'aqua';
 li3.style.margin = '5px';
-li3.style.marginRight = '40%';
-data1.insertAdjacentElement('beforeend', li3);
 
-let li4 = document.createElement('li');
-li4.textContent = "最高気温: " + data.main.temp_max;
 li4.style.fontSize = '20px';
 li4.style.backgroundColor = 'aqua';
 li4.style.margin = '5px';
-li4.style.marginRight = '40%';
-data1.insertAdjacentElement('beforeend', li4);
 
-let li5 = document.createElement('li');
-li5.textContent = "風向: " + data.wind.deg;
 li5.style.fontSize = '20px';
 li5.style.backgroundColor = 'aqua';
 li5.style.margin = '5px';
-li5.style.marginRight = '40%';
-data1.insertAdjacentElement('beforeend', li5);
 
-let li6 = document.createElement('li');
-li6.textContent = "風速: " + data.wind.speed;
 li6.style.fontSize = '20px';
 li6.style.backgroundColor = 'aqua';
 li6.style.margin = '5px';
-li6.style.marginRight = '40%';
-data1.insertAdjacentElement('beforeend', li6);
 
-let li7 = document.createElement('li');
-li7.textContent = "湿度: " + data.main.humidity;
 li7.style.fontSize = '20px';
 li7.style.backgroundColor = 'aqua';
 li7.style.margin = '5px';
-li7.style.marginRight = '40%';
-data1.insertAdjacentElement('beforeend', li7);
 
-let li8 = document.createElement('li');
-li8.textContent = "都市名: " + data.name;
 li8.style.fontSize = '20px';
 li8.style.backgroundColor = 'aqua';
 li8.style.margin = '5px';
-li8.style.marginRight = '40%';
-data1.insertAdjacentElement('beforeend', li8);
+
+let a = document.querySelector('#print');
+a.addEventListener('click', result);
+let search = document.querySelector('select[id="country"]');
+
+function result() {
+  console.log('選択された国名: ' + search.value);
+}
+
+let b = document.querySelector('#print');
+b.addEventListener('click', sendRequest);
+
+function sendRequest() {
+  let url;
+  if(search.value==='カイロ') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/360630.json';
+  } else if(search.value==='モスクワ') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/524901.json';
+  } else if(search.value==='ヨハネスブルク') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/993800.json';
+  } else if(search.value==='北京市') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/1816670.json';
+  } else if (search.value==='東京') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/1850147.json';
+  } else if(search.value==='シンガポール') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/1880252.json';
+  } else if(search.value==='シドニー') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/2147714.json';
+  } else if(search.value==='ロンドン') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/2643743.json';
+  } else if(search.value==='パリ') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/2968815.json';
+  } else if(search.value==='リオデジャネイロ') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/3451189.json';
+  } else if(search.value==='ニューヨーク') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/5128581.json';
+  } else if(search.value==='ロサンゼルス') {
+    url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/5368361.json';
+  }
+
+  axios.get(url).then(showResult).catch(showError).then(finish);
+}
+
+function showResult(resp) {
+  let data = resp.data;
+
+  if(typeof data === 'string') {
+    data = JSON.parse(data);
+  }
+  console.log(data);
+
+  console.log("天気: " + data.weather[0].description);
+  console.log("緯度: " + data.coord.lon);
+  console.log("経度: " + data.coord.lat);
+  console.log("最低気温: " + data.main.temp_min);
+  console.log("最高気温: " + data.main.temp_max);
+  console.log("風向: " + data.wind.deg);
+  console.log("風速: " + data.wind.speed);
+  console.log("湿度: " + data.main.humidity);
+  console.log("都市名: " + data.name);
+
+  let search = document.querySelector('select[id="country"]');
+  midasi.textContent = '◎' + search.value + 'の天気: ' + data.weather[0].description;
+
+  let li1 = document.querySelector('li#li1');
+  li1.textContent = '緯度:  ' + data.coord.lon;
+  
+  let li2 = document.querySelector('li#li2');
+  li2.textContent = "経度: " + data.coord.lat;
+  
+  let li3 = document.querySelector('li#li3');
+  li3.textContent = "最低気温: " + data.main.temp_min;
+
+  let li4 = document.querySelector('li#li4');
+  li4.textContent = "最高気温: " + data.main.temp_max;
+
+  let li5 = document.querySelector('li#li5');
+  li5.textContent = "風向: " + data.wind.deg;
+
+  let li6 = document.querySelector('li#li6');
+  li6.textContent = "風速: " + data.wind.speed;
+
+  let li7 = document.querySelector('li#li7');
+  li7.textContent = "湿度: " + data.main.humidity;
+
+  let li8 = document.querySelector('li#li8');
+  li8.textContent = "都市名: " + data.name;
+}
+
+function showError(err) {
+  console.log(err);
+}
+
+function finish() {
+  console.log('Ajax 通信が終わりました');
+}

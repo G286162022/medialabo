@@ -4,20 +4,42 @@
         <meta charset="utf-8">
         <title>世界の天気</title>
         <link rel="stylesheet" href="project.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
         <script src="weather.js" defer></script>
     </head>
     <body>
         <h1>世界の天気</h1>
         <p>
-            <label for="country">国名を入力してください: </label>
-            <input type="text" name="country" id="country" size="10">
+            <label for="country">調べたい地域(国名)を選択してください: </label>
+            <select id="country">
+                <option value="" selected>-選択してください-</option>
+                <option value="カイロ">カイロ(エジプト)</option>
+                <option value="モスクワ">モスクワ(ロシア)</option>
+                <option value="ヨハネスブルク">ヨハネスブルク(南アフリカ)</option>
+                <option value="北京市">北京市</option>
+                <option value="東京">東京</option>
+                <option value="シンガポール">シンガポール</option>
+                <option value="シドニー">シドニー(オーストラリア)</option>
+                <option value="ロンドン">ロンドン(イギリス)</option>
+                <option value="パリ">パリ(フランス)</option>
+                <option value="リオデジャネイロ">リオデジャネイロ(ブラジル)</option>
+                <option value="ニューヨーク">ニューヨーク(アメリカ合衆国)</option>
+                <option value="ロサンゼルス">ロサンゼルス(アメリカ合衆国)</option>
+            </select>
             <button id="print">検索</button>
         </p>
         <div id="result">
             <ul id="zentai1">
                 <li id="midasi1"></li>
                 <ul id="naiyou1">
-                    <li id="data1"></li>
+                    <li id="li1">緯度: </li>
+                    <li id="li2">経度: </li>
+                    <li id="li3">最低気温: </li>
+                    <li id="li4">最高気温: </li>
+                    <li id="li5">風向: </li>
+                    <li id="li6">風速: </li>
+                    <li id="li7">湿度: </li>
+                    <li id="li8">都市名: </li>
                 </ul>
             </ul>
         </div>
