@@ -4,6 +4,17 @@ body {
     background: linear-gradient(to bottom, rgb(110, 213, 247), white);
 }
 
+div.flex {
+    display: flex;
+}
+
+img {
+    width: 10%;
+    height: 10%;
+    text-align: right;
+    margin: 5px;
+}
+
 h1 {
     font-size: 40px;
 }

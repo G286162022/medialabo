@@ -7,6 +7,23 @@ h1 {
     background-color: orange;
 }
 
+h2 {
+    border-left-style: solid;
+    border-left-color: orange;
+    border-bottom-style: solid;
+    border-bottom-color: orange;
+    border-left-width: 10px;
+    padding-left: 5px;
+}
+
+h3 {
+    border-left-style: solid;
+    border-left-color: orange;
+    border-left-width: 5px;
+    padding-left: 5px;
+    margin-left: 5px;
+}
+
 div.zentai {
     display: flex;
     flex-direction: column;
@@ -20,4 +37,8 @@ div.box {
 
 ul {
     background-color: rgb(252, 198, 133);
+}
+
+ul.url {
+    background-color: antiquewhite;
 }
