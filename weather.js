@@ -126,25 +126,25 @@ function showResult(resp) {
   midasi.textContent = '◎' + data.name + 'の天気: ' + data.weather[0].description;
 
   let li1 = document.querySelector('li#li1');
-  li1.textContent = '緯度:  ' + data.coord.lon;
+  li1.textContent = '緯度:  ' + data.coord.lon + '度';
   
   let li2 = document.querySelector('li#li2');
-  li2.textContent = "経度: " + data.coord.lat;
+  li2.textContent = "経度: " + data.coord.lat + '度';
   
   let li3 = document.querySelector('li#li3');
-  li3.textContent = "最低気温: " + data.main.temp_min;
+  li3.textContent = "最低気温: " + data.main.temp_min + '℃';
 
   let li4 = document.querySelector('li#li4');
-  li4.textContent = "最高気温: " + data.main.temp_max;
+  li4.textContent = "最高気温: " + data.main.temp_max + '℃';
 
   let li5 = document.querySelector('li#li5');
   li5.textContent = "風向: " + data.wind.deg;
 
   let li6 = document.querySelector('li#li6');
-  li6.textContent = "風速: " + data.wind.speed;
+  li6.textContent = "風速: " + data.wind.speed + 'm/s';
 
   let li7 = document.querySelector('li#li7');
-  li7.textContent = "湿度: " + data.main.humidity;
+  li7.textContent = "湿度: " + data.main.humidity + '%';
 
   let li8 = document.querySelector('li#li8');
   li8.textContent = "都市名: " + data.name;
