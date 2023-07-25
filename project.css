@@ -28,11 +28,6 @@ li.midasi {
     background-color: rgb(0, 204, 255);
 }
 
-ul.naiyou1 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-gap: 3px;
-}
 li.data {
     font-size: 20px;
     background-color: aqua;
