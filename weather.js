@@ -56,6 +56,7 @@ naiyou.style.display = 'inline-grid';
 naiyou.style.width = '98%';
 naiyou.style.gridTemplateColumns = '1fr 1fr';
 naiyou.style.gridGap = '3px';
+naiyou.style.backgroundColor = '#00a4ac';
 naiyou.style.borderStyle = 'ridge';
 naiyou.style.borderColor = 'skyblue';
 naiyou.style.borderWidth = '10px';
