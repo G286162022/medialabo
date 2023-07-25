@@ -53,7 +53,8 @@ midasi.style.backgroundColor = 'rgb(0, 204, 255)';
 
 let naiyou = document.querySelector('ul#naiyou1');
 naiyou.style.display = 'inline-grid';
-naiyou.style.gridTemplateColumns = '200px 200px';
+naiyou.style.width = '98%';
+naiyou.style.gridTemplateColumns = '1fr 1fr';
 naiyou.style.gridGap = '3px';
 naiyou.style.borderStyle = 'ridge';
 naiyou.style.borderColor = 'skyblue';
